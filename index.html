@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bank</title>
     <link rel="stylesheet" href="bankbalance.css">
 </head>
 <body>
@@ -20,16 +20,16 @@
    
     
 
-    <p> <button id="dep_btn" > Deposit</button></p>
+    <p> <button id="dep_btn" onclick="deposit()"> Deposit</button></p>
 
     <p>Withdraw</p>
 
     <input placeholder="Enter the amount" id="with_ip" type="number">
 
-    <p><button id="withdrw_btn">Withdraw</button></p>
+    <p><button id="withdrw_btn" onclick="withdraw()">Withdraw</button></p>
 
 
-    <p><button id="dis_blc">Show Balance</button></p>
+    <p><button id="dis_blc" onclick="display()">Show Balance</button></p>
 
 
     
@@ -39,60 +39,46 @@
 
 </div>
     
-</div>
+
 
 
 
     <script>
-        var dep = document.getElementById("ip_tag");
 
+        let balance =0;
 
         
         
-         var withdrw =   document.getElementById("withdrw_btn");
-
-
-
-         
-           
-
-        var displ = document.getElementById("disply");
-
-        let bal=0;
-
+        
         function deposit(){
+            let dep = parseFloat( document.getElementById("ip_tag").value);
+            
+            balance += dep;
+            
 
-            bal += dwithdrw.value;
-            this.bal;
+
+       }
+       function withdraw(){
+        let wdrw =parseFloat( document.getElementById("with_ip").value);
+        
+        balance -= wdrw;
+       }
+
+        function display(){
+
+
+            document.getElementById("disply").innerHTML = balance ;
+
 
             
 
-            
 
-            
         }
         
-        document.write(bal);
-        
-        
-        depst=addEventListener('click',deposit)
 
-       
-        
         
     </script>
 
 
-
-
-
-      
-
-
-
-
-
-    
-    
 </body>
 </html>
