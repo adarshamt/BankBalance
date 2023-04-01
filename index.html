@@ -16,7 +16,7 @@
     <p>Deposit Money</p>
 
 
-    <input id="ip_tag" style="text-decoration: none;" placeholder="Enther the amount">
+    <input id="ip_tag" style="text-decoration: none;" placeholder="Enther the amount" type="number">
    
     
 
@@ -51,17 +51,27 @@
         
         
         function deposit(){
+
+            
             let dep = parseFloat( document.getElementById("ip_tag").value);
+            if (dep<=0){
+                alert("Invalid input")
+            }
             
             balance += dep;
-            
+             document.getElementById("ip_tag").value="";
 
 
        }
        function withdraw(){
         let wdrw =parseFloat( document.getElementById("with_ip").value);
+        if ( wdrw<=0){
+                alert("Invalid input")
+            }
+            
         
         balance -= wdrw;
+        document.getElementById("with_ip").value=" ";
        }
 
         function display(){
